@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+        }
+    </style>
+
+<!-- <iframe src="a.html" title="W3Schools Free Online Web Tutorials">
+</iframe> -->
+
+    <head>
+        <title>My First Document</title>
+    </head>
+
+
+    
+
+    <body>
+
+        <h1 id="main-heading">FORMS</h1>
+
+        <form target="_blank" id="input-form" action="a.html" method="" autocomplete="on">
+
+            <label for="form-input-name">Enter your name:</label> 
+            <input id="form-input-name" name="firstname" type="text" />
+            <br />
+            <br />
+            <label for="form-input-age">Enter your age:</label> 
+            <input id="form-input-age" placeholder="Enter your age" name="age" type="number" step=5 min="0" max="25" />
+            <br />
+            <br />
+            <input id="form-input-pass" placeholder="Password" name="pass" type="password" />
+
+            <br />
+            <br />
+
+            <input type="color" name="color" />
+
+            <br />
+            <br />
+
+            <input type="date" name="date" min="2021-10-01" min="2021-10-31" />
+
+            <br />
+            <br />
+
+            <label for="cgpa">Select CGPA</label>
+            <select name="cgpa" id="cgpa" multiple>
+                <option disabled>Choose your CGPA</option>
+                <option value="6">Six</option>
+                <option value="7">Seven</option>
+                <option value="8">Eight</option>
+                <option value="9">Nine</option>
+                <option value="10">Ten</option>
+            </select>
+
+            <br />
+            <br />
+
+            <textarea name="text" rows="10" cols="25"></textarea>
+
+            <br />
+            <br />
+
+            <button type="button">Click me</button>
+
+            <br />
+
+
+            <fieldset>
+                <legend>Choose your radio</legend>
+                <input type="radio" value="RED FM" id="rn-red" name="radio-station">
+                <label for="rn-red">RED FM</label>
+                <input type="radio" value="Mirchi" id="rn-mirchi" name="radio-station"> 
+                <label for="rn-mirchi">Mirchi</label>
+                <input type="radio" value="Rainbow" id="rn-rainbow" name="radio-station"> FM
+                <label for="rn-rainbow">Rainbow</label>  
+                <br /><br />
+                <input type="radio" id="rn-red-1" name="radio-station-2">
+                <label for="rn-red-1">RED FM</label>
+                <input type="radio" id="rn-mirchi-1" name="radio-station-2"> 
+                <label for="rn-mirchi-1">Mirchi</label>
+                <input type="radio" id="rn-rainbow-1" name="radio-station-2"> FM
+                <label for="rn-rainbow-1">Rainbow</label>  
+            </fieldset>
+
+            <fieldset>
+                <legend>Shopping List</legend>
+                <input type="checkbox" id="sl-b" name="shopping-list-bike" /> <label for="sl-b">Bike</label>
+                <input type="checkbox" id="sl-p" name="shopping-list-phone" /> iPhone
+                <input type="checkbox" id="sl-h" name="shopping-list-house" /> House
+                <!-- <input type="radio" id="rn-red" name="radio-station">
+                <label for="rn-red">RED FM</label>
+                <input type="radio" id="rn-mirchi" name="radio-station"> 
+                <label for="rn-mirchi">Mirchi</label>
+                <input type="radio" id="rn-rainbow" name="radio-station"> FM
+                <label for="rn-rainbow">Rainbow</label>   -->
+            </fieldset>
+
+            <input type="submit" />
+            <input type="reset" />
+
+        </form>
+
+        <hr />
+
+        <!-- &lt;article&gt;&lt;/article&gt;
+
+        &cent;
+
+        &copy;
+
+        <header>
+            <h1>Heading 1</h1>
+            
+            <nav>
+                <ul>
+                    <li>Home Page</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </nav>
+
+        </header>
+        
+        
+
+        <!--
+        <h2>Heading 2</h2> 
+
+        <h3>Heading 3</h3>
+
+        <h4>Heading 4</h4>
+
+        <h5>Heading 5</h5>
+
+        <h6>Heading 6</h6>
+        
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut turpis sollicitudin, dapibus ipsum a, convallis nunc.<br />Nunc fringilla tortor ut odio egestas fringilla. Fusce arcu ligula, dictum luctus justo in, pretium laoreet nunc. </p>
+
+        <p>Fusce dapibus, nulla quis viverra elementum, leo justo sollicitudin nibh, at suscipit est justo ut ante. Curabitur dictum tortor nibh, ut rhoncus elit elementum eget. Maecenas ultricies quam massa, eget laoreet nisi varius eget. Etiam porttitor placerat consequat.</p>
+
+        <a href="http://google.com">Link to Google</a>
+        
+        <br />
+        
+        <a href="http://linkedin.com">Link to Linkedin</a>
+
+        <br />
+
+        <a href="http://youtube.com">Link to Youtube</a>
+
+        <br />
+        <br />
+
+        <!-- <img alt="Image of a beautiful scenery" src="image1.jpg" width="480" height="300" /> 
+
+        <div>
+            <h2>Text Formatting</h2>
+            <b>Bold Text</b>
+            <br />
+            <u>Underlined</u>
+            <br />
+            <strong>Strong</strong>
+            <br />
+            <i>Italic</i>
+            <br />
+            <em>Emphasis</em>
+            <br />
+            <mark>Marked</mark>
+            <br />
+            <small>Small</small>
+            <br />
+            <del>Deleted</del>
+            <br />
+            <ins>Inserted</ins>
+            <br />
+            Text <sub>sub</sub> <sup>sup</sup>
+        </div>
+
+        <p> a span is <span style="margin: 15px; color:red">used to contain</span> other elements</p>
+        
+        <!-- <b> - Bold text
+        <strong> - Important text
+        <i> - Italic text
+        <em> - Emphasized text
+        <mark> - Marked text
+        <small> - Smaller text
+        <del> - Deleted text
+        <ins> - Inserted text
+        <sub> - Subscript text
+        <sup> - Superscript text 
+        <br /><br />
+        
+        <table>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </tr>
+            <tr>
+                <td rowspan="3" colspan="2">Row 1, Col 1</td>
+                <td>Row 1, Col 2</td>
+            </tr>
+            <tr>
+                <td>Row 2, Col 1</td>
+                <td>Row 2, Col 2</td>
+            </tr>
+            <tr>
+                <td colspan="2">Row 3, Col 1</td>
+                <td>Row 3, Col 2</td>
+            </tr>
+        </table>
+
+        <ol type="1" start="25">
+            <li>Coffee</li>
+            <li>T</li>
+            <li>Water</li>
+        </ol> -->
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        
+        <footer>
+            &copy; NS 2021
+        </footer>
+
+    </body>
+
+</html>
+
