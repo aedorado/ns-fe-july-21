@@ -1,0 +1,97 @@
+* {
+    font-family: Tahoma;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
+    /* border: 5px dotted fuchsia;
+    color: green;
+    */
+    text-align: right;
+    text-decoration: overline;
+    text-transform: capitalize;
+}
+
+#navigation {
+    border: 2px solid green;
+}
+
+.nav-item {
+    padding: 2px;
+    margin: 2px;
+    border: 1px ridge brown;
+}
+
+body {
+    width: 100%;
+}
+
+a {
+    color: steelblue;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover, a:active {
+    color: hotpink;
+    background-color: black;
+    cursor: wait;
+}
+
+p:hover {
+    cursor: wait;
+}
+
+/* li:first-child {
+    background-color: black;
+    color: red;
+} */
+
+li:nth-child(3) {
+    background-color: black;
+    color: red;
+}
+
+p::first-line {
+    background-color: blue;
+}
+
+p::first-letter {
+    background-color: brown;
+}
+
+/* a:active {
+    color: darkorange;
+} */
+
+div, p {
+    text-indent: 50px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    word-spacing: 15px;
+    text-shadow: 4px 4px 4px black;
+    width: 75%;
+    max-width: 500px;
+    min-width: 400px;
+    height: 100px;
+    padding: 15px 25px 35px;
+    margin: 0 auto;
+    /* overflow: auto; */
+    overflow-x: auto;
+    overflow-y: scroll;
+    /* margin-top: 25px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    margin-left: 0px; */
+    border: 5px solid blue;
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(15, 155, 155); */
+    background-color: #6F9B0B;
+}
+
+h6 {
+    color: red;
+}
