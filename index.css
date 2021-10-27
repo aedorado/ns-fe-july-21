@@ -4,6 +4,17 @@
     margin: 0px;
 }
 
+/* relative */
+/* absolute */
+/* fixed */
+
+h1, h2, h3, h4, h5, h6 {
+    display: inline;
+    /* visibility: hidden; */
+    /* display: none; */
+    /* opacity: 0.09; */
+}
+
 h1 {
     /* border: 5px dotted fuchsia;
     color: green;
@@ -23,12 +34,31 @@ h1 {
     border: 1px ridge brown;
 }
 
+nav {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* z-index: 1; */
+    /* transform: translate(-50%, -50%); */
+}
+
+
+
 body {
     width: 100%;
 }
 
+.moving {
+    position: relative;
+    /* bottom: -10px; */
+    top: 100px;
+    left: 100px;
+    /* right: 25px; */
+}
+
 a {
     color: steelblue;
+    display: block;
 }
 
 a:visited {
@@ -67,7 +97,38 @@ p::first-letter {
     color: darkorange;
 } */
 
-div, p {
+/* 1. Relative: container moves relative to its original position */
+/* 2. Absolute: container moves relative to its positioned ancestor */
+
+/* Absolute - element is positioned relative to its closest positioned ancestor */
+
+.rel {
+    height: 250px;
+    width: 250px;
+    border: 2px solid green;
+    position: relative;
+    top: 20px;
+    left: 250px;
+    padding: 50px;
+}
+
+.nopos {
+    border: 2px solid yellow;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.abs {
+    height: 75px;
+    width: 100px;
+    border: 2px solid red;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+p {
     text-indent: 50px;
     letter-spacing: 2px;
     line-height: 1.5;
