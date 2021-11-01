@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .element {
+            background-color: teal;
+            border: 1px solid red;
+            opacity: 0.75;
+            text-align: center;
+        }
+
+        #container {
+            display: grid;
+            /* grid-template-columns: 200px; */
+            /* grid-template-columns: 200px 200px 200px 200px; */
+            grid-template-columns: repeat(2, 1fr 2fr);
+            grid-auto-rows: minmax(100px, auto);
+            /* gap: 10px; */
+            column-gap: 30px;
+            row-gap: 30px;
+        } 
+
+        #e1 {
+            grid-row: 1/5;
+            /* grid-row-start: 1; */
+            /* grid-row-end: 4; */
+            grid-column: 1/3;
+        }
+
+        #e2 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+
+        #e3 {
+            /* grid-column-start: 3; */
+            /* grid-column-end: 5; */
+        }
+
+        #e4 {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+
+        #e6 {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 5;
+        }
+
+        /* grid-column-start */
+        /* grid-column-end */
+        /* grid-row-start */
+        /* grid-row-end */
+        /* grid-row */
+        /* grid-column */
+
+        #container2 {
+            display: grid;
+            /* grid-template-columns: 200px; */
+            /* grid-template-columns: 200px 200px 200px 200px; */
+            /* grid-template-columns: 200px 100px 300px; */
+        }
+    </style>
+
+</head>
+<body>
+    
+<div id="container">
+    <div id="e1" class="element">1</div>
+    <div id="e2" class="element">2</div>
+    <div id="e3" class="element">3</div>
+    <div id="e4" class="element">4</div>
+    <!-- <div class="element">5</div>
+    <div id="e6" class="element">6</div>
+    <div class="element">7</div>
+    <div class="element">8</div>
+    <div class="element">9</div>
+    <div class="element">10</div> -->
+</div>
+<br><br><br>
+<!-- <div id="container2">
+    <div class="element">1</div>
+    <div class="element">2</div>
+    <div class="element">3</div>
+    <div class="element">4</div>
+    <div class="element">5</div>
+    <div class="element">6</div>
+    <div class="element">7</div>
+    <div class="element">8</div>
+    <div class="element">9</div>
+    <div class="element">10</div>
+</div> -->
+
+
+</body>
+</html>
