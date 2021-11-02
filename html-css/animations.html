@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            margin: 100px;
+            background-color: red;
+            transition: 2s cubic-bezier(.32,-0.6,.74,1.63);
+        }
+
+        #inner {
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+            animation: move-it-move-it 2s ease forwards infinite alternate 1s;
+        }
+
+        #container:hover #inner {
+            animation-play-state: paused;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* background-color: darkmagenta; */
+            /* transform: translate(300%, 100%); */
+        }
+
+        @keyframes move-it-move-it {
+
+            0% {
+                
+            }
+
+            33% {
+                transform: translateY(100%);
+                background-color: red;
+            }
+
+            67% {
+                transform: translate(100%, 100%);
+                background-color: yellow;
+            }
+
+            100% {
+                transform: translateX(100%);
+                background-color: green;
+            }
+            
+        }
+
+        /* Animations */
+
+
+        /* Transitions */
+        /* #container:hover {
+            background-color: blue;
+            /* transform: skew(75deg, 75deg); */
+            transform: translate(100px) 
+            /* ;rotate(360deg) scale(1.5, 1.5); */
+            /* transform: translateX(100px); */
+            /* transform: translateY(-100px) scaleX(5); */
+            /* transform: translate(100px, 200px); */
+            /* transform: scale(0.5, 2); */
+            /* transform: scale(3, 1); */
+        } */
+    </style>
+
+</head>
+<body>
+    
+    <div id="container">
+        <div id="inner">
+
+        </div>
+    </div>
+
+
+</body>
+</html>
