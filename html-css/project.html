@@ -8,22 +8,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+            
+
     <style>
 
         * {
             padding: 0px;
             margin: 0px;
+            
         }
 
         header {
             margin: 0px;
-            background-color: rgb(226, 106, 106);
+            background-color: #BE3144;
             padding: fixed;
         }
 
         nav {
            height: 60px; 
         }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav li {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            height: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav li:hover {
+            background-color: #45567D;
+        }
+
+        footer {
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            color: white;
+            background-color: #303841;
+            height: 100vh;
+        }
+
+        #footer-upper-div {
+            height: 80vh;
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+        }
+
+        #footer-upper-div-inner {
+            align-items: flex-end;
+            height: 25vh;
+        }
+
+        #footer-upper-div h1 {
+            font-size: 50px;
+            margin: 10px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        #footer-upper-div-coffee-question {
+            font-family: 'Raleway', sans-serif;
+            font-weight: lighter;
+            margin-bottom: 25px;
+        }
+
+        #social-links {
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        #social-links span {
+            width: 140px;
+            transition: 0.5s ease;
+            padding: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #social-links span:hover {
+            transform: translateY(10px);
+        }
+
+        footer hr {
+            background-color: #BE3144;
+            height: 3px;
+            border: 0px;
+        }
+
+        #footer-lower-div {
+            height: 20vh;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+        }
+
+        #footer-lower-div h4 {
+            font-size: 18px;
+            font-weight: 300;
+            margin: auto
+            /* margin-left: 20px; */
+            /* margin-right: 20px; */
+        }
+
     </style>
 
 </head>
@@ -37,5 +139,25 @@
             </ul>
         </nav>
     </header>
+    <footer>
+        <div id="footer-upper-div">
+            <div id="footer-upper-div-inner">
+                <h1>Let's work together...</h1>
+            <p id="footer-upper-div-coffee-question">How do you take your coffee?</p>
+            <div id="social-links">
+                <span><i class="fa fa-facebook"></i> Facebook</span>
+                <span><i class="fa fa-github"></i> Github</span>
+                <span><i class="fa fa-twitter"></i> Twitter</span>
+                <span><i class="fa fa-envelope"></i> Send a mail</span>
+                <span><i class="fa fa-phone"></i> Call me</span>
+            </div>
+            </div>
+        </div>
+        <hr />
+        <div id="footer-lower-div">
+            <h4>**This is just a fake portfolio. All the projects and contact details given are not real.</h4>
+            <h4>&copy; Created for freeCodeCamp </h4>
+        </div>
+    </footer>
 </body>
 </html>
