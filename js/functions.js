@@ -14,6 +14,20 @@ function printDetails(name, age) {
     console.log(`My name is ${name} and I am ${age} years old.`);
 }
 
+// ...
+// for in
+// for of 
+
+console.log(...'cat');
+
+// default parameters
+function add(a = 10, b = 5, c = 12, name={ x: 10, y: 20 }) {
+    console.log(name);
+    return a + b + c;
+}
+
+// console.log(add(0, -5, 1));
+
 // let s = sum(1, 2);
 // console.log(s);
 // console.log(sq(10));
