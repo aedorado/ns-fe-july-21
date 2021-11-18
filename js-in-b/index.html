@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+        div {
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            transition: 0.5s ease;
+        }
+    </style>
+
+    <script>
+
+        // let ask = confirm('Are you ok?');
+        // if (ask) {
+        //     alert('You are ok');
+        // } else {
+        //     alert('You are NOT ok');
+        // }
+
+        // // let name = prompt("Enter your name");
+        // // if (name === "") {
+        // //     alert('Your did not enter the name');
+        // // } else {
+        // //     alert(`Your name is ${name}`);
+        // // }
+    </script>
+
+</head>
+
+<body>
+    <!-- <h1>Heading 1</h1> -->
+    <button id="my-button">Click me!</button>
+    <input type="text" id="my-input" /> 
+    <br>
+    <input id="checkbox" type="checkbox" />
+    <div id="my-div"></div>
+    <form id="my-form">
+        <input id="my-form-input" type="text" placeholder="Type 10 char">
+        <br>
+        <p id="form-disp"></p>
+        <br>
+        <input disabled id="fsb" type="submit">
+    </form>
+</body>
+
+
+<script>
+
+document.getElementById('my-form-input').addEventListener('keyup', function(event) {
+    console.log(event, event.target, event.target.value, event.target.value.length);
+    document.getElementById('form-disp').innerHTML = `You have typed ${event.target.value.length} characters.`;
+    if (event.target.value.length < 10) {
+        document.getElementById('fsb').disabled = true;
+    } else {
+        document.getElementById('fsb').disabled = false;
+    }
+});
+
+document.getElementById('my-form').addEventListener('submit', function(event) {
+    let len = document.getElementById('my-form-input').value.length;
+    if (len < 10) {
+        document.getElementById('my-form-input').style.border = '1px solid red';
+        event.preventDefault();
+    }
+});
+
+
+
+document.getElementById('checkbox').addEventListener('click', function(event) {
+    event.preventDefault();
+});
+
+// function onbuttonClick() {
+//     alert('Button is clicked');
+// }
+
+let button = document.getElementById('my-button');
+
+button.addEventListener('click', function () {
+});
+
+let inputEle = document.getElementById('my-input');
+// inputEle.addEventListener('focus', function () {
+//     console.log('Input element is in focus');
+// });
+inputEle.addEventListener('keyup', function(event) {
+    console.log(event.target.value);
+});
+
+document.getElementById('my-div').addEventListener('mouseover', function(event) {
+    event.target.style.backgroundColor = 'yellow';
+});
+
+
+document.getElementById('my-div').addEventListener('mouseout', function(event) {
+    event.target.style.backgroundColor = 'blueviolet';
+});
+
+
+// const h1 = document.createElement('h1'); // <h1></h1>
+// const text = document.createTextNode('Heading 1'); // "Heading 1"
+// h1.appendChild(text);   // <h1>Heading 1</h1>
+// document.body.append(h1);
+
+</script>
+
+
+</html>
+
+<!-- 
+
+    Broswer object model
+
+    ECMAScript - Javascript
+    Common specification for both nodejs & browsers
+
+    BOM - All the objects exposed for use by the browser
+
+    ECMA - specification
+    specificaiton tells us that how a language should behave
+
+
+    C lang Specs
+    - A can code his own C language that should follow the specification
+    - B can code his own C language but that should also follow the spec
+
+    epcoh? 
+
+ -->
