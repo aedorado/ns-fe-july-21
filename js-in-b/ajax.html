@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+        div > p {
+            font-size: 32px;
+        }
+    </style>
+
+</head>
+
+<body>
+AJAX
+<div id="display"></div>
+<p id="error"></p>
+</body>
+
+<script>
+
+const req = new XMLHttpRequest();
+
+req.addEventListener('readystatechange', (e) => {
+    if (e.target.readyState == 4) {
+        if (e.target.status == 200) {
+
+            let countries = JSON.parse(e.target.responseText);
+            console.log(countries);
+            // document.getElementById('display').innerHTML = countries[0].flag;
+            countries.forEach((country) => {
+                const p = document.createElement('p');
+                p.innerHTML = country.flag;
+                document.getElementById('display').appendChild(p);
+            });
+
+        } else {
+            document.getElementById('error').innerHTML = 'API error';
+        }
+    }
+});
+
+req.open('GET', 'https://restcountries.com/v3.1/all');
+req.send();
+
+
+
+
+
+
+
+
+
+// const req = new XMLHttpRequest();
+// req.addEventListener('readystatechange', (e) => {
+//     if (e.target.readyState == 4 && e.target.status == 200) {
+//         let jso = JSON.parse(e.target.responseText);
+//         document.getElementById('display').innerHTML = jso.puzzle;
+//     } else if (e.target.readyState == 4) {
+//         document.getElementById('display').innerHTML = 'API error occured.';
+//     }
+// });
+// req.open('GET', 'http://puzzle.mead.io/puzzle?wordsCount=3');
+// req.send();
+
+// req.addEventListener('readystatechange', (event) => {
+//     console.log(event);
+// });
+</script>
+
+</html>
