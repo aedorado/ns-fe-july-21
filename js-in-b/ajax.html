@@ -20,37 +20,118 @@ AJAX
 
 <script>
 
+const getPuzzle = async () => {
+    const response = await fetch('http://puzzle.meadio/puzzle');
+    if (response.status === 200) {
+        const json = await response.json();
+        return json.puzzle;
+    } else {
+        throw new Error('An error occured');
+    }
+}
+
+let displayPuzzle = async () => {
+    try {
+        const puzzle = await getPuzzle();
+        document.getElementById('display').innerHTML = puzzle;
+    } catch (e) {
+        document.getElementById('error').innerHTML = 'Err';
+    }
+}
+
+displayPuzzle();
+
+
+
+
+
 // a promise object represents an eventual completion/failure of an operation/function etc
+
+// const getPuzzle = () => {
+//     return fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+//         if (response.status === 200) {
+//             return response.json();
+//         }
+//     });
+// }
+
+// fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+//     if (response.status === 200) {
+//         return response.json()
+//     }
+// })
+// getPuzzle()
+// .then((data) => document.getElementById('display').innerHTML = data.puzzle)
+// .catch((err) => document.getElementById('error').innerHTML = err);
+
+
+
+
+
+
 
 // 1. Cannot return something from a nested function
 // 2. The getPuzzle function completes before the readystatechange callback
 
-function getPuzzle(callback) {
-    const req = new XMLHttpRequest(); // T = 1
-    // T = 2
-    req.addEventListener('readystatechange', function (e) {
-        if (e.target.readyState == 4 && e.target.status == 200) { // T = 10
-            let jso = JSON.parse(e.target.responseText);
-            callback(null, jso.puzzle);
-        } else if (e.target.readyState == 4) {
-            callback('Error', null);
-        }
-    });
-    req.open('GET', 'http://puzzle.mead.io/puzzle?words=4'); // T = 3
-    req.send(); // T = 4
-}
+// let getPuzzle = (puzzc) => new Promise((resolve, reject) => {
+//     const req = new XMLHttpRequest();
+//     req.addEventListener('readystatechange', function(e) {
+//         if (e.target.readyState === 4) {
+//             if (e.target.status == 200) {
+//                 const data = JSON.parse(e.target.responseText)
+//                 resolve(data.puzzle);
+//             } else {
+//                 reject('An API error occured');
+//             }
+//         }
+//     })
+//     req.open('GET', `http://puzzle.mead.io/puzzle?wordCount=${puzzc}`);
+//     req.send();
+// });
 
-function puzzleCB(err, puzzle) {
-    if (err) {
-        document.getElementById('error').innerHTML = 'API error occured.';
-    } else {
-        document.getElementById('display').innerHTML = puzzle;
-    }
-};
-function f(p) { 
-    document.getElementById('display').innerHTML = p;
-};
-const puzzle = getPuzzle(puzzleCB); // T = 0, T = 6
+// getPuzzle(5).then(
+//     (data) => {
+//         document.getElementById('display').innerHTML = data;
+//     },
+//     (err) => {
+//         throw err;
+//     }
+// ).catch((err) => {
+//     document.getElementById('error').innerHTML = err;
+// });
+
+
+
+
+
+
+
+// function getPuzzle(callback) {
+//     const req = new XMLHttpRequest(); // T = 1
+//     // T = 2
+//     req.addEventListener('readystatechange', function (e) {
+//         if (e.target.readyState == 4 && e.target.status == 200) { // T = 10
+//             let jso = JSON.parse(e.target.responseText);
+//             callback(null, jso.puzzle);
+//         } else if (e.target.readyState == 4) {
+//             callback('Error', null);
+//         }
+//     });
+//     req.open('GET', 'http://puzzle.mead.io/puzzle?words=4'); // T = 3
+//     req.send(); // T = 4
+// }
+
+// function puzzleCB(err, puzzle) {
+//     if (err) {
+//         document.getElementById('error').innerHTML = 'API error occured.';
+//     } else {
+//         document.getElementById('display').innerHTML = puzzle;
+//     }
+// };
+// function f(p) { 
+//     document.getElementById('display').innerHTML = p;
+// };
+// const puzzle = getPuzzle(puzzleCB); // T = 0, T = 6
 // f(puzzle);
 
 
