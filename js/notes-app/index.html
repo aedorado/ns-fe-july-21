@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes app</title>
+</head>
+<body>
+    <h1>Notes App</h1>
+    <div>
+        <input placeholder="Note title" type="text" name="title" id="note-input-title">
+        <br>
+        <textarea placeholder="Note Body" name="body" id="note-input-body"></textarea>
+        <br>
+        <button id="note-input-button">Create Note</button>
+        <br><br>
+        <select id="sort-dropdown">
+            <option disabled selected>Sort By</option>
+            <option value="title">Title</option>
+            <option value="createdAt">CreatedAt</option>
+        </select>
+    </div>
+    <div id="display-notes"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+<script src="index.js"></script>
+</html>
+
+<!-- 
+
+    1. Allow user to create notes
+    2. Allow user to delete notes
+    3. Allow user to update notes
+    4. Allow user to view notes
+    5. Allow user to filter notes
+    6. Allow user to sort notes
+
+ -->
