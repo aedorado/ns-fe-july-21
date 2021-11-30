@@ -14,6 +14,15 @@
 // module exports the necessary items
 // import and use what is needed from that module
 
-import {shapeName, area} from './shapes';
+// app.mjs
+// import { addTwo } from './addTwo.mjs';
 
-let ar = area(10);
+// // Prints: 6
+// console.log(addTwo(4));
+
+import { name, addTwo } from './addTwo.mjs';
+
+console.log(addTwo(5));
+console.log(name);
+
+
