@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Clock from './Clock';
+import Counter from './Counter';
+import CounterWithButton from './CounterWithButton';
+
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -105,10 +109,43 @@ import App from './App';
 
 // <div class="div-1" id="" >
 
+// 1. Time value should be determined on its own
+// 2. The clock should update itself
+
+// function Clock(props) {
+//   return (
+//     <div>
+//       <h1>It is {props.timeValue}</h1>
+//     </div>
+//   );
+// }
+
+// function tick() {
+//   // ele = ...
+//   ReactDOM.render(
+//     <Clock timeValue={new Date().toLocaleTimeString()} />,
+//     document.getElementById('root')
+//   );
+// }
+
+// setInterval(tick, 1000);
+
 ReactDOM.render(
-  <App />, // Welcome({ name: "Anurag", age:"25" });
+  <CounterWithButton />,
   document.getElementById('root')
 );
+
+// setTimeout(() => {
+//   ReactDOM.render(
+//     <App />,
+//     document.getElementById('root')
+//   );
+// }, 20000)
+
+// ReactDOM.render(
+//   <App />, // Welcome({ name: "Anurag", age:"25" });
+//   document.getElementById('root')
+// );
 
 
 
