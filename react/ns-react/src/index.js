@@ -142,8 +142,8 @@ let messages = ['Hi how are you!', 'I am fine', '1', '2'];
 // messages = [];
 
 ReactDOM.render(
-  // <Mailbox unreadMsgs={messages} />,
-  <Page />,
+  <Mailbox unreadMsgs={messages} />,
+  // <Page />,
   document.getElementById('root')
 );
 
