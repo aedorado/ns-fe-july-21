@@ -7,7 +7,8 @@ import Counter from './Counter';
 import CounterWithButton from './CounterWithButton';
 import Greeting from './Greeting';
 import LoginControl from './Greeting';
-
+import Mailbox from './Mailbox';
+import Page from './Page';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -137,8 +138,12 @@ import LoginControl from './Greeting';
   // document.getElementById('root')
 // );
 
+let messages = ['Hi how are you!', 'I am fine', '1', '2'];
+// messages = [];
+
 ReactDOM.render(
-  <LoginControl />,
+  // <Mailbox unreadMsgs={messages} />,
+  <Page />,
   document.getElementById('root')
 );
 
