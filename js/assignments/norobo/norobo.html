@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        img {
+            width: 110px;
+            height: 75px;
+            margin: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Please click on the identical tiles to verify that you are not a robot</h3>
+    <div id="main"></div>
+</body>
+
+<script>
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+
+
+function generateImages() {
+
+    let imagesClicked = [];
+
+    const imageClickedHandler = function(e) {
+        
+        if (imagesClicked.includes(e.target)) {
+            return ;
+        }
+
+        imagesClicked.push(e.target);
+        
+        if (imagesClicked.length == 1) {
+            let resetButton = document.createElement('button');
+            resetButton.innerHTML = "Reset"
+            resetButton.setAttribute("id", "reset");
+            document.getElementById("main").appendChild(resetButton);
+            resetButton.onclick = function() {
+                imagesClicked = [];
+                resetButton.remove();
+            }
+        } else if (imagesClicked.length == 2) {
+            let verifyButton = document.createElement('button');
+            verifyButton.innerHTML = "Verify";
+            verifyButton.setAttribute("id", "btn");
+            document.getElementById("main").appendChild(verifyButton);
+            verifyButton.onclick = function() {
+                let p = document.createElement('p');
+                if (imagesClicked.length == 2 && imagesClicked[0].attributes["data-ns-test"].nodeValue === imagesClicked[1].attributes["data-ns-test"].nodeValue) {
+                    p.innerHTML = "You are a human. Congratulations!"
+                } else {
+                    p.innerHTML = "We can't verify you as a human. You selected the non-identical tiles."
+                }
+                document.getElementById("main").appendChild(p);
+            }
+        } else {
+            document.getElementById("btn").remove();
+        }
+        
+        
+    }
+
+
+    let images = [];
+    for (i = 0; i < 5; ++i) {
+        let img = document.createElement('img');
+        img.setAttribute("data-ns-test", `img${i+1}`);
+        // img.src = `${i+1}.jpg`;
+        images.push(img);
+        img.addEventListener("click", imageClickedHandler);
+    }
+    let random = Math.floor(Math.random() * 5);
+    let img = document.createElement('img');
+    img.setAttribute("data-ns-test", `img${random+1}`);
+    // img.src = images[random].src;
+    img.addEventListener("click", imageClickedHandler);
+    images.push(img);
+    images = shuffle(images);
+    images.forEach(img => {
+        document.getElementById("main").appendChild(img);
+    })
+
+}
+
+generateImages();
+
+
+
+</script>
+
+</html>

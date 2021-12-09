@@ -5,6 +5,8 @@ import App from './App';
 import Clock from './Clock';
 import Counter from './Counter';
 import CounterWithButton from './CounterWithButton';
+import Greeting from './Greeting';
+import LoginControl from './Greeting';
 
 
 // let h1 = React.createElement(
@@ -130,8 +132,13 @@ import CounterWithButton from './CounterWithButton';
 
 // setInterval(tick, 1000);
 
+// ReactDOM.render(
+  // <CounterWithButton />,
+  // document.getElementById('root')
+// );
+
 ReactDOM.render(
-  <CounterWithButton />,
+  <LoginControl />,
   document.getElementById('root')
 );
 
