@@ -11,6 +11,7 @@ import Mailbox from './Mailbox';
 import Page from './Page';
 import Blog from './Blog';
 import Forms from './Form';
+import LSU from './LSU';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -151,7 +152,7 @@ const posts = [
 
 
 ReactDOM.render(
-  <Forms />,
+  <LSU />,
   // <Blog posts={posts} />,
   // <Mailbox unreadMsgs={messages} />,
   // <Page />,
