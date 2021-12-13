@@ -9,6 +9,8 @@ import Greeting from './Greeting';
 import LoginControl from './Greeting';
 import Mailbox from './Mailbox';
 import Page from './Page';
+import Blog from './Blog';
+import Forms from './Form';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -138,11 +140,20 @@ import Page from './Page';
   // document.getElementById('root')
 // );
 
-let messages = ['Hi how are you!', 'I am fine', '1', '2'];
+let messages = [{ id: '1', msgText: 'Hi. This is msg 1' }, { id: '2', msgText: 'Lets go 2' }, {id: 3, msgText: '3rd wala msg'}];
 // messages = [];
 
+const posts = [
+  { id: 1, title: 'News Updates', content: 'This is the news', date: new Date() },
+  { id: 2, title: 'Newton Updates', content: 'This is the update', date: new Date() },
+  { id: 3, title: 'Earth Updates', content: 'Its cold on earth', date: new Date() }
+]
+
+
 ReactDOM.render(
-  <Mailbox unreadMsgs={messages} />,
+  <Forms />,
+  // <Blog posts={posts} />,
+  // <Mailbox unreadMsgs={messages} />,
   // <Page />,
   document.getElementById('root')
 );
