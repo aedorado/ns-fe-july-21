@@ -12,6 +12,7 @@ import Page from './Page';
 import Blog from './Blog';
 import Forms from './Form';
 import LSU from './LSU';
+import APICallingComponent from './APICallingComponent';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -152,7 +153,8 @@ const posts = [
 
 
 ReactDOM.render(
-  <LSU />,
+  <APICallingComponent />,
+  // <LSU />,
   // <Blog posts={posts} />,
   // <Mailbox unreadMsgs={messages} />,
   // <Page />,

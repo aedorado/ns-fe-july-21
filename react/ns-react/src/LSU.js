@@ -5,7 +5,7 @@ class BoilingVerdict extends React.Component {
         super(props);
     }
     render() {
-        if (this.props.tempInC >= 100) {
+        if (this.props.temp >= 100) {
             return (<p>Water is boiling</p>);
         }
         return (<p>Water is not boiling</p>);
@@ -51,8 +51,8 @@ class Calculator extends React.Component {
 
     handleCelChange(temperature) {
         this.setState({
-            temp: temperature,
-            scale: 'c'
+            temp: temperature,  // 100
+            scale: 'c'  // 'c'
         });
     }
 
@@ -73,13 +73,16 @@ class Calculator extends React.Component {
 
     render() {
 
-        const cel = (this.state.scale === 'c') ? this.state.temp: this.fToC(this.state.temp);
-        const far = (this.state.scale === 'f') ? this.state.temp: this.cToF(this.state.temp);
+        const cel = (this.state.scale === 'c') ? this.state.temp: this.fToC(this.state.temp);   // 100
+        const far = (this.state.scale === 'f') ? this.state.temp: this.cToF(this.state.temp);   // 212
+
+        // cel, far
+
         return (
             <div>
                 <TemperatureInput temp={cel} onTempChange={this.handleCelChange} scale="c" />
                 <TemperatureInput temp={far} onTempChange={this.handleFarChange} scale="f" />
-                <BoilingVerdict tempInC={this.state.temp} />
+                <BoilingVerdict temp={cel} />
             </div>
         );
     }
@@ -100,3 +103,7 @@ class LSU extends React.Component {
 }
 
 export default LSU;
+
+
+
+// https://api.github.com/users/aedorado
