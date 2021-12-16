@@ -13,6 +13,10 @@ import Blog from './Blog';
 import Forms from './Form';
 import LSU from './LSU';
 import APICallingComponent from './APICallingComponent';
+import LoginControlF from './Functions';
+import Function from './Functions';
+import FunctionC from './Functions';
+import NewsFlash from './NewsFlash';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -153,7 +157,9 @@ const posts = [
 
 
 ReactDOM.render(
-  <APICallingComponent />,
+  <NewsFlash />,
+  // <FunctionC />,
+  // <APICallingComponent />,
   // <LSU />,
   // <Blog posts={posts} />,
   // <Mailbox unreadMsgs={messages} />,
