@@ -1,6 +1,6 @@
 import './App.css';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 
 function Greeting(props) {
@@ -127,9 +127,106 @@ function MultiCounter(props) {
     );
 }
 
+// side effects?
+// Main work of react component - Return some JSX
+// Any operations that do not target the final output values
+// of a react component are termed as side effects!
+
+// fetch ~ 
+// DOm manipulation is side effect
+// timers
+
+// component rendering 
+// & side effect logic are independent
+// to seprate them, we should not
+// perform side effects in the component body
+// Why? Because component body is mainly used to compute the output
+
+// What to do now?
+// Decouple rendering from side-effects
+// useEffect
+// run side effects, idependently of rendering logic
+
+// arguments of useEffect? 
+// useEffect takes 2 args:
+// useEffect(a function i.e. the side effect, when should a side effect run)
+// useEffect(callback, [dependencies])
+// callback - this is the function that has the side effect logic
+// dependencies - optional, array. The useEffect callback is executed only when
+// any of the dependecies have changed
+// between 2 rendering of the component
+
+// Dependencies
+// 1. Dont provide - Will run after every rendering
+// 2. [] - Runs only after the very first rendering
+// 3. [x, y, z ...] - Only when one of the dependecny values will change
+
+// How can we simulate lify-cylc emthods with use-effect
+// 1. ComponentDidMount?
+// 2. ComponentDidUpdate
+
+function Greet(props) {
+    const name = props.name;
+    const message = `Hello ${name}`; // contributes to final output
+
+    // ComponentDidMount
+    useEffect(() => {
+        document.title = `Greetings to ${name}`;
+    }, []);
+
+    // ComponentDidUpdate
+    useEffect(() => {
+        document.title = `Greetings to ${name}`;
+    }, [name]);
+
+    // document.title = `Greetings to ${name}`; // side-effect; Not Good
+
+    return (    // ontributes to final output
+        <div>{message}</div>
+    );
+}
+
+function Github(props) {
+
+    const [userName, setUserName] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [userData, setUserData] = useState({});
+
+    useEffect(() => {
+        const url = `https://api.github.com/users/${userName}`;
+        console.log(userName !== "");
+        if (userName !== "") {
+            setIsLoading(true);
+        }
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            setUserData({
+                'avatar_url': data.avatar_url,
+                'name': data.name,
+            });
+            setIsLoading(false);
+        });
+    }, [userName]);
+
+    return (
+        <div>
+            <input value={userName} onChange={(e) => setUserName(e.target.value)} placeholder='username'></input>
+            {
+                userData && 
+                <div>
+                    {isLoading && <img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" />}
+                    Name: {userData.name}
+                    <img src={userData.avatar_url} alt="User Image" />
+                </div>
+            }
+        </div>
+    );
+}
+
 function FunctionC(props) {
     return (
-        <MultiCounter></MultiCounter>
+        <Github></Github>
     );
 }
 

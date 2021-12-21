@@ -157,8 +157,8 @@ const posts = [
 
 
 ReactDOM.render(
-  <NewsFlash />,
-  // <FunctionC />,
+  // <NewsFlash />,
+  <FunctionC />,
   // <APICallingComponent />,
   // <LSU />,
   // <Blog posts={posts} />,
