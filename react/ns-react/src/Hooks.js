@@ -130,7 +130,7 @@ function LoginRed(props) {
         //     // return email.includes('@') && email.length > 2
         // });
         dispatchEmail({ type: 'CHECK_EMAIL' });
-        dispatchPassword({type: 'CHECK_PASS'})
+        dispatchPassword({type: 'CHECK_PASS'});
         // setPassValid(password.length > 6);
         // console.log(emailState, passState)
         setFormValid(emailState.isValid && passState.isValid);
