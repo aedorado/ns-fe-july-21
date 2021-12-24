@@ -59,3 +59,15 @@
     transform: rotate(360deg);
   }
 }
+
+.home {
+  margin: 20px;
+}
+
+.nav {
+  background-color: aqua;
+}
+
+.nav-menu * {
+  margin: 5px;
+}

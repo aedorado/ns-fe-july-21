@@ -18,6 +18,7 @@ import Function from './Functions';
 import FunctionC from './Functions';
 import NewsFlash from './NewsFlash';
 import LoginRed from './Hooks';
+import ShoppingApp from './ShoppingApp';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -158,8 +159,9 @@ const posts = [
 
 
 ReactDOM.render(
+  <ShoppingApp />,
   // <NewsFlash />,
-  <LoginRed />,
+  // <LoginRed />,
   // <APICallingComponent />,
   // <LSU />,
   // <Blog posts={posts} />,
