@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import Clock from './Clock';
@@ -19,6 +22,8 @@ import FunctionC from './Functions';
 import NewsFlash from './NewsFlash';
 import LoginRed from './Hooks';
 import ShoppingApp from './ShoppingApp';
+import RoutingApp from './RoutingApp';
+import TwoCounters from './TwoCounters';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -158,17 +163,29 @@ const posts = [
 ]
 
 
+
+
+
 ReactDOM.render(
-  <ShoppingApp />,
-  // <NewsFlash />,
-  // <LoginRed />,
-  // <APICallingComponent />,
-  // <LSU />,
-  // <Blog posts={posts} />,
-  // <Mailbox unreadMsgs={messages} />,
-  // <Page />,
+  <TwoCounters />,
+  // <BrowserRouter>
+  //   <RoutingApp />
+  // </BrowserRouter>,
   document.getElementById('root')
 );
+
+// ReactDOM.render(
+//   <RoutingApp />,
+//   // <ShoppingApp />,
+//   // <NewsFlash />,
+//   // <LoginRed />,
+//   // <APICallingComponent />,
+//   // <LSU />,
+//   // <Blog posts={posts} />,
+//   // <Mailbox unreadMsgs={messages} />,
+//   // <Page />,
+//   document.getElementById('root')
+// );
 
 // setTimeout(() => {
 //   ReactDOM.render(
