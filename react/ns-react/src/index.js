@@ -24,6 +24,7 @@ import LoginRed from './Hooks';
 import ShoppingApp from './ShoppingApp';
 import RoutingApp from './RoutingApp';
 import TwoCounters from './TwoCounters';
+import Quotes from './Quotes';
 
 // let h1 = React.createElement(
 //   "h1", // type of element
@@ -167,7 +168,10 @@ const posts = [
 
 
 ReactDOM.render(
-  <TwoCounters />,
+  <BrowserRouter>
+    <Quotes />
+  </BrowserRouter>,
+  // <TwoCounters />,
   // <BrowserRouter>
   //   <RoutingApp />
   // </BrowserRouter>,

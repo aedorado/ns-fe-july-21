@@ -95,3 +95,52 @@
 .selected {
   background-color: tomato;
 }
+
+.counter {
+  font-size: 40px;
+  text-align: center;
+  margin: 10px;
+}
+
+#quotes-heading {
+  display: inline;
+}
+
+#quotes-navigation-div {
+  display: inline;
+  float: right;
+}
+
+#quotes-navigation-div span {
+  margin: 15px;
+  background-color: green;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+#quotes-navigation-div a {
+  text-decoration: none;
+  color: white;
+}
+
+#quotes-nav-bar {
+  background-color: greenyellow;
+  padding: 10px;
+}
+
+.i-quote {
+  font-size: 12px;
+  width: 50%;
+  margin: 4px auto;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.i-quote-content {
+
+}
+
+.i-quote-author {
+  text-align: right;
+}
